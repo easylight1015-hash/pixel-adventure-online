@@ -1,0 +1,12 @@
+{
+  "name": "pixel-adventure-online",
+  "version": "0.1.0",
+  "private": true,
+  "description": "像素冒險 Online：零預算優先的 2D 俯視角多人網頁 MMORPG 最小可行原型",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

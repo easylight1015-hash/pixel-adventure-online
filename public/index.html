@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>像素冒險 Online</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">MULTIPLAYER PIXEL RPG · MVP 0.1</div>
+        <h1>🗡️ 像素冒險 <span>Online</span></h1>
+      </div>
+      <div class="connection"><i id="statusDot"></i><span id="statusText">連線中…</span></div>
+    </header>
+    <section class="layout">
+      <div class="game-panel">
+        <div class="canvas-wrap"><canvas id="game" width="960" height="600" aria-label="遊戲地圖"></canvas>
+          <div class="overlay" id="overlay"><div class="modal">
+            <div class="modal-icon">🌲</div><h2>歡迎來到新手村</h2>
+            <p>輸入角色名稱，開始多人冒險！</p>
+            <form id="joinForm"><input id="playerName" maxlength="12" placeholder="你的冒險者名稱" value="勇者" required><button>進入世界</button></form>
+            <small>需先啟動本機伺服器，詳細步驟見 README。</small>
+          </div></div>
+        </div>
+        <div class="controls">
+          <div class="control-group"><b>移動</b><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>或方向鍵</span></div>
+          <div class="control-group"><b>攻擊</b><kbd>空白鍵</kbd><span>或點擊攻擊</span></div>
+          <button id="attackBtn" class="attack" disabled>⚔ 攻擊</button>
+        </div>
+      </div>
+      <aside class="sidebar">
+        <section class="card character">
+          <div class="card-title">冒險者狀態</div>
+          <div class="avatar" id="avatar">🧙</div>
+          <h2 id="charName">尚未登入</h2><div class="muted" id="charLevel">Lv. 1 新手冒險者</div>
+          <div class="stat"><div><span>生命值 HP</span><b id="hpText">100 / 100</b></div><div class="bar"><i id="hpBar"></i></div></div>
+          <div class="stat"><div><span>經驗值 EXP</span><b id="expText">0 / 30</b></div><div class="bar exp"><i id="expBar"></i></div></div>
+        </section>
+        <section class="card">
+          <div class="card-title">線上玩家 <span class="pill" id="playerCount">0 / 10</span></div>
+          <div id="playerList" class="player-list"><p class="muted">等待連線…</p></div>
+        </section>
+        <section class="card">
+          <div class="card-title">冒險紀錄</div>
+          <div id="log" class="log"><p>歡迎來到像素冒險 Online！</p><p>靠近綠色史萊姆後按空白鍵攻擊。</p></div>
+        </section>
+        <section class="card tips"><div class="card-title">新手指南</div>
+          <p>🟩 綠色史萊姆：擊敗獲得 10 EXP</p><p>🪵 棕色地面：村莊道路</p><p>🌳 深綠色：森林樹木裝飾</p><p>🌐 其他玩家會即時出現在同一張地圖。</p>
+        </section>
+      </aside>
+    </section>
+    <footer>原型版本 0.1 · 測試用多人房間（上限 10 人） · 尚未包含帳號與資料庫存檔</footer>
+  </main>
+  <script src="/game.js"></script>
+</body>
+</html>
